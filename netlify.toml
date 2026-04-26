@@ -1,0 +1,19 @@
+# Her AI Hour™ — Netlify configuration
+# Tells Netlify where to find the static files and serverless functions.
+
+[build]
+  # No build step needed — index.html is a self-contained file
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  # Use Node 20+ runtime for the briefing function
+  node_bundler = "esbuild"
+  external_node_modules = ["@anthropic-ai/sdk", "@netlify/blobs"]
+
+# Optional but recommended: shorter URL for the function
+# /api/briefing → /.netlify/functions/briefing
+[[redirects]]
+  from = "/api/briefing"
+  to = "/.netlify/functions/briefing"
+  status = 200

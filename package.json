@@ -1,0 +1,10 @@
+{
+  "name": "her-ai-hour",
+  "version": "1.0.0",
+  "description": "Her AI Hour™ — Where the woman who leads meets the tools that listen.",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "@netlify/blobs": "^8.0.0"
+  }
+}
