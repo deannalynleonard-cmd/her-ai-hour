@@ -1888,7 +1888,7 @@ body.path-curious .use-case-card {
   padding: 14px 18px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: var(--bg-card);
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 0.92rem;
@@ -1905,42 +1905,43 @@ body.path-curious .use-case-card {
 .builder-row select:focus { border-color: var(--accent); }
 
 .builder-output {
-  background: var(--bg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px 28px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
   line-height: 1.85;
-  border-left: 4px solid var(--accent);
+  border-left: 3px solid var(--accent);
   min-height: 110px;
   color: var(--text);
   margin-bottom: 20px;
 }
 
-/* Building path: white prompt box — clean and elevated */
+/* Building path: consistent ivory treatment */
 body.path-climbing .builder-output {
-  background: #FAF9F6;
+  background: rgba(5,10,20,0.12);
   color: #050A14;
-  border-left-color: rgba(5,10,20,0.3);
+  border-left-color: rgba(5,10,20,0.25);
+  font-style: italic;
 }
 
 body.path-climbing .builder-row select {
-  background: rgba(250,249,246,0.7);
+  background: rgba(5,10,20,0.08);
   color: #050A14;
-  border-color: rgba(5,10,20,0.2);
+  border-color: rgba(5,10,20,0.18);
 }
 
 body.path-climbing .builder-box {
-  background: rgba(250,249,246,0.25);
-  border-color: rgba(5,10,20,0.12);
+  background: rgba(5,10,20,0.06);
+  border-color: rgba(5,10,20,0.1);
 }
 
 body.path-climbing .builder-box h3,
 body.path-climbing .builder-sub { color: #050A14; }
 
-body.path-climbing .builder-row label {
-  color: rgba(5,10,20,0.65);
-}
+body.path-climbing .builder-row label { color: rgba(5,10,20,0.6); }
 
 body.path-climbing .copy-btn {
   background: #050A14;
@@ -2535,9 +2536,13 @@ footer p {
 .briefing-tag.strategy { background: rgba(175,140,132,0.14); color: #8A6E68; }
 
 .briefing-source {
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  color: var(--text-dim);
-  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-style: normal;
 }
 
 .briefing-headline {
@@ -2550,9 +2555,11 @@ footer p {
 }
 
 .briefing-summary {
-  font-size: 0.9rem;
-  color: rgba(5,10,20,0.58);
-  line-height: 1.7;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(5,10,20,0.65);
+  line-height: 1.75;
   margin-bottom: 16px;
 }
 
@@ -2585,9 +2592,12 @@ footer p {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: #C9A84C;
   font-weight: 600;
+  color: #C9A84C;
+  font-style: normal;
+  letter-spacing: 0.02em;
 }
 
 .briefing-action::before {
@@ -5247,6 +5257,13 @@ function choosePath(path, card) {
   document.querySelectorAll('.path-card').forEach(c => c.classList.remove('selected'));
   card.classList.add('selected');
 
+  // Close any open trust tool detail
+  if (typeof closeTool === 'function') {
+    document.querySelectorAll('.tool-detail').forEach(function(d) { d.classList.remove('active'); });
+    var tc = document.getElementById('trust-cards');
+    if (tc) tc.style.display = '';
+  }
+
   // Apply body class for palette shift
   document.body.classList.remove('path-curious','path-climbing','path-leading');
   document.body.classList.add('path-' + path);
@@ -5733,9 +5750,13 @@ body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0
 .briefing-tag.strategy { background: rgba(175,140,132,0.14); color: #8A6E68; }
 
 .briefing-source {
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  color: var(--text-dim);
-  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-style: normal;
 }
 
 .briefing-headline {
@@ -5748,9 +5769,11 @@ body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0
 }
 
 .briefing-summary {
-  font-size: 0.9rem;
-  color: rgba(5,10,20,0.58);
-  line-height: 1.7;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(5,10,20,0.65);
+  line-height: 1.75;
   margin-bottom: 16px;
 }
 
@@ -5783,9 +5806,12 @@ body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: #C9A84C;
   font-weight: 600;
+  color: #C9A84C;
+  font-style: normal;
+  letter-spacing: 0.02em;
 }
 
 .briefing-action::before {
@@ -6793,9 +6819,13 @@ body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0
 .briefing-tag.strategy { background: rgba(175,140,132,0.14); color: #8A6E68; }
 
 .briefing-source {
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  color: var(--text-dim);
-  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-style: normal;
 }
 
 .briefing-headline {
@@ -6808,9 +6838,11 @@ body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0
 }
 
 .briefing-summary {
-  font-size: 0.9rem;
-  color: rgba(5,10,20,0.58);
-  line-height: 1.7;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(5,10,20,0.65);
+  line-height: 1.75;
   margin-bottom: 16px;
 }
 
@@ -6843,9 +6875,12 @@ body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: #C9A84C;
   font-weight: 600;
+  color: #C9A84C;
+  font-style: normal;
+  letter-spacing: 0.02em;
 }
 
 .briefing-action::before {
