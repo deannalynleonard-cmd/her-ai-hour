@@ -10,7 +10,7 @@
 
 Her AI Hour™ is an AI platform built for women in senior leadership who are navigating the AI moment with intention. It's not a course. It's not a chatbot. It's not another tool that talks *at* her.
 
-It's a space where the woman who already leads — in the C-suite, the boardroom, the founder's seat, the partnership track — meets AI on her own terms. With her own language. At her own level.
+It's a space where the woman who already leads, in the C-suite, the boardroom, the founder's seat, the partnership track, meets AI on her own terms. With her own language. At her own level.
 
 ## The problem
 
