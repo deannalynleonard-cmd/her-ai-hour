@@ -240,7 +240,7 @@ function jsonResponse(body: any, status = 200) {
     status,
     headers: {
       "Content-Type": "application/json",
-      "Cache-Control": "public, max-age=21600, s-maxage=21600",
+      "Cache-Control": "no-store, no-cache, must-revalidate",
     },
   });
 }
