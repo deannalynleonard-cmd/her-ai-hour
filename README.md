@@ -1,8 +1,6 @@
 # Her AI Hour™
 
 > *AI built around the woman who leads.*
->
-> ![Her AI Hour — Where the woman who leads meets the tools that listen](screenshot.png)
 
 **Live:** [heraihour.netlify.app](https://heraihour.netlify.app/)
 
