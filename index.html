@@ -6580,39 +6580,9 @@ document.addEventListener('keydown', function(e) {
 
 <!-- ══ HERO ══════════════════════════════════════ -->
 
-<button id="rtt-btn" onclick="scrollToTop()" title="Return to top" aria-label="Return to top">&#8679;</button>
+
 
 <style>
-#rtt-btn {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #c9a84c;
-  color: #050A14;
-  border: none;
-  font-size: 1.6rem;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 4px 24px rgba(201,168,76,0.4);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.3s, transform 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  padding-bottom: 2px;
-}
-#rtt-btn:hover {
-  box-shadow: 0 6px 32px rgba(201,168,76,0.5);
-}
-body.path-curious  #rtt-btn { background: #C9A84C; color: #050A14; }
-body.path-climbing #rtt-btn { background: #FAF9F6; color: #050A14; box-shadow: 0 4px 24px rgba(250,249,246,0.2); }
-body.path-leading  #rtt-btn { background: #AF8C84; color: #FAF9F6; box-shadow: 0 4px 24px rgba(175,140,132,0.3); }
 
 /* ════════════════════════════════════════════════
    THE BRIEFING
